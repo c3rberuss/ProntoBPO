@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin!
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+  odoo:
+    container_name: odoo
+    image: odoo
+    ports:
+      - "8069:8069"
+    depends_on:
+      - db
+    environment:
+      - HOST=db
+      - USER=admin
+      - PASSWORD=admin!
+  web:
+    container_name: django
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  admin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    depends_on:
+      - db
+    ports:
+    - "9999:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin!

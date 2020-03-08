@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YiRO3AW0oMDvTYbqrdpXlLKGDA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Django" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="" />
+      <created>1583423392226</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583423392226</updated>
+      <workItem from="1583423394139" duration="3586000" />
+      <workItem from="1583427057429" duration="2474000" />
+      <workItem from="1583435647681" duration="2737000" />
+      <workItem from="1583597518412" duration="528000" />
+      <workItem from="1583625874687" duration="4598000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="417" y="200" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583425899443">
+      <screen x="0" y="24" width="1360" height="744" />
+    </state>
+    <state x="417" y="200" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1360.744@0.24.1360.744" timestamp="1583425899443" />
+    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583627695838">
+      <screen x="0" y="24" width="1360" height="744" />
+    </state>
+    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.24.1360.744@0.24.1360.744" timestamp="1583627695838" />
+  </component>
+</project>
