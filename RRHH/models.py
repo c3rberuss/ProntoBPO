@@ -30,6 +30,9 @@ class HrApplicant(models.Model):
     kanban_state = models.CharField(max_length=100)
     write_date = models.DateTimeField(blank=True, null=True)
 
+    def __str__(self):
+        return self.partner_name
+
     class Meta:
         managed = False
         db_table = 'hr_applicant'
@@ -173,6 +176,9 @@ class HrJob(models.Model):
         managed = False
         db_table = 'hr_job'
 
+    def __str__(self):
+        return self.name
+
 
 class HrJobHrRecruitmentStageRel(models.Model):
     hr_recruitment_stage = models.ForeignKey('HrRecruitmentStage', models.DO_NOTHING)
@@ -235,6 +241,9 @@ class HrRecruitmentDegree(models.Model):
     class Meta:
         managed = False
         db_table = 'hr_recruitment_degree'
+
+    def __str__(self):
+        return self.name
 
 
 class HrRecruitmentSource(models.Model):

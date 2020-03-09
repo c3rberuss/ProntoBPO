@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="" />
+    <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RRHH/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RRHH/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Django.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProntoBPO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProntoBPO/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RRHH/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RRHH/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RRHH/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -14,7 +29,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YiRO3AW0oMDvTYbqrdpXlLKGDA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,8 +41,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/RRHH" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Django" type="Python.DjangoServer" factoryName="Django server">
@@ -64,7 +90,9 @@
       <workItem from="1583427057429" duration="2474000" />
       <workItem from="1583435647681" duration="2737000" />
       <workItem from="1583597518412" duration="528000" />
-      <workItem from="1583625874687" duration="4598000" />
+      <workItem from="1583625874687" duration="6155000" />
+      <workItem from="1583723109918" duration="6667000" />
+      <workItem from="1583785316908" duration="4207000" />
     </task>
     <servers />
   </component>
@@ -76,6 +104,10 @@
       <screen x="0" y="24" width="1360" height="744" />
     </state>
     <state x="417" y="200" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1360.744@0.24.1360.744" timestamp="1583425899443" />
+    <state x="177" y="30" key="SettingsEditor" timestamp="1583723236417">
+      <screen x="0" y="24" width="1360" height="744" />
+    </state>
+    <state x="177" y="30" key="SettingsEditor/0.24.1360.744@0.24.1360.744" timestamp="1583723236417" />
     <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583627695838">
       <screen x="0" y="24" width="1360" height="744" />
     </state>
