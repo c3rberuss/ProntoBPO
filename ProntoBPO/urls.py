@@ -17,14 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework import routers
-from RRHH.views import JobViewSet
+from RRHH.views import JobViewSet, JobRetrieve, CompanyListCreate, CompanyViewSet
+from ProntoBPO.settings import DEBUG
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register('jobs', JobViewSet)
+router.register('companies', CompanyViewSet, basename='HrCompany')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('api/jobs/<int:pk>/', JobRetrieve.as_view()),
+    path('api/auth/', obtain_jwt_token),
     path('api/', include(router.urls)),
-    path('api/auth', obtain_jwt_token),
 ]
+
+if DEBUG:
+    urlpatterns.append(path('admin/', admin.site.urls))

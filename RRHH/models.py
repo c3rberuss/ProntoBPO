@@ -1,4 +1,12 @@
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import User, PermissionsMixin, AbstractUser
 from django.db import models
+from django.utils import timezone
+
+from RRHH.managers import CustomUserManager
+
+colors = ('ribbon-two-primary', 'ribbon-two-secondary', 'ribbon-two-info', 'ribbon-two-danger', 'ribbon-two-warning',
+          'ribbon-two-success', 'ribbon-two-pink', 'ribbon-two-purple', 'ribbon-two-dark')
 
 
 class HrApplicant(models.Model):
@@ -34,6 +42,8 @@ class HrApplicant(models.Model):
         return self.partner_name
 
     class Meta:
+        verbose_name = "Applicant"
+        verbose_name_plural = "Applicants"
         managed = False
         db_table = 'hr_applicant'
 
@@ -172,12 +182,20 @@ class HrJob(models.Model):
     manager = models.ForeignKey(HrEmployee, models.DO_NOTHING, blank=True, null=True)
     color = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'hr_job'
-
     def __str__(self):
         return self.name
+
+    @property
+    def color_class(self):
+        index = self.color if self.color is not None else 0
+        class_color = colors[index] if len(colors) > index else colors[0]
+        return "ribbon-two " + class_color
+
+    class Meta:
+        verbose_name = "Job"
+        verbose_name_plural = "Jobs"
+        managed = False
+        db_table = 'hr_job'
 
 
 class HrJobHrRecruitmentStageRel(models.Model):
@@ -270,3 +288,40 @@ class HrRecruitmentStage(models.Model):
     class Meta:
         managed = False
         db_table = 'hr_recruitment_stage'
+
+
+class HrCompanyPlan(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    no_of_views = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Plan"
+        verbose_name_plural = "Plans"
+        db_table = 'hr_company_plan'
+
+
+class HrCompany(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(unique=True)
+    name = models.CharField(max_length=175)
+    plan = models.ForeignKey(HrCompanyPlan, on_delete=models.CASCADE, null=True)
+    limit_exceeded = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+
+    objects = CustomUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', ]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Company"
+        verbose_name_plural = "Companies"
+        db_table = 'hr_company'

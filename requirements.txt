@@ -3,3 +3,4 @@ psycopg2>=2.7
 djangorestframework
 django-filter
 djangorestframework-jwt
+django-cors-headers

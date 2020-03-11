@@ -4,6 +4,7 @@ services:
   db:
     image: postgres
     container_name: postgres
+    restart: always
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin!
@@ -37,7 +38,7 @@ services:
     depends_on:
       - db
     ports:
-    - "9999:80"
+      - "9999:80"
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=admin!

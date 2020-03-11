@@ -2,22 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RRHH/permissions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RRHH/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Django.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RRHH/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RRHH/managers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProntoBPO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProntoBPO/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RRHH/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RRHH/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -92,7 +98,13 @@
       <workItem from="1583597518412" duration="528000" />
       <workItem from="1583625874687" duration="6155000" />
       <workItem from="1583723109918" duration="6667000" />
-      <workItem from="1583785316908" duration="4207000" />
+      <workItem from="1583785316908" duration="5531000" />
+      <workItem from="1583813507615" duration="12760000" />
+      <workItem from="1583872140484" duration="9953000" />
+      <workItem from="1583900390448" duration="7620000" />
+      <workItem from="1583908110496" duration="6000" />
+      <workItem from="1583936920546" duration="290000" />
+      <workItem from="1583937252804" duration="506000" />
     </task>
     <servers />
   </component>
@@ -100,6 +112,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="381" y="24" width="596" height="744" key="#Dockerfile" timestamp="1583813582395">
+      <screen x="0" y="24" width="1360" height="744" />
+    </state>
+    <state x="381" y="24" width="596" height="744" key="#Dockerfile/0.24.1360.744@0.24.1360.744" timestamp="1583813582395" />
     <state x="417" y="200" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583425899443">
       <screen x="0" y="24" width="1360" height="744" />
     </state>
@@ -108,9 +124,9 @@
       <screen x="0" y="24" width="1360" height="744" />
     </state>
     <state x="177" y="30" key="SettingsEditor/0.24.1360.744@0.24.1360.744" timestamp="1583723236417" />
-    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583627695838">
+    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583874998731">
       <screen x="0" y="24" width="1360" height="744" />
     </state>
-    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.24.1360.744@0.24.1360.744" timestamp="1583627695838" />
+    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.24.1360.744@0.24.1360.744" timestamp="1583874998731" />
   </component>
 </project>
