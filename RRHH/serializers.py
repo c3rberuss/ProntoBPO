@@ -1,11 +1,14 @@
+import django_filters
 from rest_framework import serializers
 from RRHH.models import HrJob, HrCompany, HrApplicant
 
 
 class JobSerializer(serializers.HyperlinkedModelSerializer):
+    department = serializers.StringRelatedField(many=False)
+
     class Meta:
         model = HrJob
-        fields = ['id', 'name', 'department_id', 'description', 'requirements', 'state', 'color_class']
+        fields = ['id', 'name', 'department', 'description', 'requirements', 'state', 'color_class']
 
 
 class CompanySerializer(serializers.ModelSerializer):

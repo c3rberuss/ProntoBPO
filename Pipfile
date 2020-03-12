@@ -11,6 +11,7 @@ djangorestframework = "*"
 django-filter = "*"
 djangorestframework-jwt = "*"
 Django = ">=2.0"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6"
