@@ -9,6 +9,20 @@ colors = ('ribbon-two-primary', 'ribbon-two-secondary', 'ribbon-two-info', 'ribb
           'ribbon-two-success', 'ribbon-two-pink', 'ribbon-two-purple', 'ribbon-two-dark')
 
 
+class HrApplicantCategory(models.Model):
+    name = models.CharField(unique=True, max_length=100)
+    color = models.IntegerField(blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        managed = False
+        db_table = 'hr_applicant_category'
+
+
 class HrApplicant(models.Model):
     email_cc = models.CharField(max_length=100, blank=True, null=True)
     name = models.CharField(max_length=100)
@@ -37,6 +51,9 @@ class HrApplicant(models.Model):
     emp = models.ForeignKey('HrEmployee', models.DO_NOTHING, blank=True, null=True)
     kanban_state = models.CharField(max_length=100)
     write_date = models.DateTimeField(blank=True, null=True)
+    categories = models.ManyToManyField(HrApplicantCategory,
+                                        through="HrApplicantHrApplicantCategoryRel",
+                                        through_fields=('hr_applicant', 'hr_applicant_category'))
 
     def __str__(self):
         return self.partner_name
@@ -46,17 +63,6 @@ class HrApplicant(models.Model):
         verbose_name_plural = "Applicants"
         managed = False
         db_table = 'hr_applicant'
-
-
-class HrApplicantCategory(models.Model):
-    name = models.CharField(unique=True, max_length=100)
-    color = models.IntegerField(blank=True, null=True)
-    create_date = models.DateTimeField(blank=True, null=True)
-    write_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'hr_applicant_category'
 
 
 class HrApplicantHrApplicantCategoryRel(models.Model):

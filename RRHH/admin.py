@@ -1,5 +1,5 @@
 from django.contrib import admin
-from RRHH.models import HrJob, HrApplicant, HrCompany, HrCompanyPlan
+from RRHH.models import HrJob, HrApplicant, HrCompany, HrCompanyPlan, HrApplicant
 from RRHH.forms import CompanyForm
 
 

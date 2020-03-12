@@ -2,27 +2,18 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from rest_framework import viewsets, generics, permissions
+from rest_framework import viewsets, generics, permissions, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from RRHH.models import HrJob, HrCompany
-from RRHH.serializers import JobSerializer, CompanySerializer, PasswordSerializer, CompanyCreateSerializer
+from RRHH.models import HrJob, HrCompany, HrApplicant
+from RRHH.permissions import IsNotLimitExceeded
+from RRHH.serializers import JobSerializer, CompanySerializer, PasswordSerializer, CompanyCreateSerializer, \
+    ApplicantSerializer, ApplicantProfileSerializer
 
 
-class JobViewSet(viewsets.ViewSetMixin, generics.ListAPIView):
+class JobViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generics.ListAPIView):
     queryset = HrJob.objects.all()
     serializer_class = JobSerializer
-
-
-class JobRetrieve(generics.RetrieveAPIView):
-    queryset = HrJob.objects.all()
-    serializer_class = JobSerializer
-
-
-class CompanyListCreate(viewsets.ViewSetMixin, generics.ListCreateAPIView):
-    permission_classes = [permissions.IsAdminUser]
-    queryset = HrCompany.objects.all()
-    serializer_class = CompanySerializer
 
 
 class CompanyViewSet(viewsets.ViewSet):
@@ -86,3 +77,30 @@ class CompanyViewSet(viewsets.ViewSet):
         company.save()
 
         return Response({"message": "The plan has been renew"})
+
+
+class ApplicantViewSet(viewsets.ViewSet):
+
+    def list(self, request):
+
+        queryset = None
+
+        if 'job' in self.request.query_params.keys():
+            queryset = HrApplicant.objects.filter(job_id=self.request.query_params['job'])
+        else:
+            queryset = HrApplicant.objects.all()
+
+        serializer = ApplicantSerializer(queryset, many=True)
+
+        return Response(serializer.data)
+
+    @action(methods=['get'], detail=False, permission_classes=[IsNotLimitExceeded])
+    def profile(self, request):
+
+        if 'id' in self.request.query_params.keys():
+            applicant = HrApplicant.objects.get(pk=self.request.query_params['id'])
+            if applicant is not None:
+                serializer = ApplicantProfileSerializer(applicant)
+                return Response(serializer.data)
+
+        return Response({"message": "Applicant does not exists"})
