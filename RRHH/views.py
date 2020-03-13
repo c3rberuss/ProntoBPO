@@ -1,9 +1,8 @@
 import django_filters
+from django.dispatch import receiver
 from django.shortcuts import render
 
 # Create your views here.
-
-from django.dispatch import receiver
 
 from RRHH.filters import JobFilter, ApplicantFilter, CompanyFilter
 from rest_framework import viewsets, generics, permissions, mixins
@@ -14,7 +13,6 @@ from RRHH.permissions import IsNotLimitExceeded
 from RRHH.serializers import JobSerializer, CompanySerializer, PasswordSerializer, CompanyCreateSerializer, \
     ApplicantSerializer, ApplicantProfileSerializer
 from RRHH.signals import count_view
-import json
 
 
 class JobViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generics.ListAPIView):
@@ -79,11 +77,12 @@ class ApplicantViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generic
         return super(ApplicantViewSet, self).retrieve(self, request, *args, **kwargs)
 
 
+# Receiver
 @receiver(count_view)
 def on_count_view(sender, **kwargs):
     applicant = kwargs['applicant']
     count_views = HrApplicantViewCount.objects.filter(company=sender).count()
     limit = sender.plan.no_of_views
 
-    if count_views <= limit:
+    if count_views <= limit and not sender.is_superuser:
         HrApplicantViewCount.objects.get_or_create(company=sender, applicant=applicant)

@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RRHH/jwt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RRHH/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProntoBPO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RRHH/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RRHH/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +99,7 @@
       <workItem from="1583981063094" duration="8183000" />
       <workItem from="1584023559018" duration="11488000" />
       <workItem from="1584068962119" duration="191000" />
-      <workItem from="1584069168728" duration="6330000" />
+      <workItem from="1584069168728" duration="7564000" />
     </task>
     <servers />
   </component>

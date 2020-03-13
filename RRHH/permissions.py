@@ -11,7 +11,7 @@ class IsNotLimitExceeded(BasePermission):
         count_views = HrApplicantViewCount.objects.filter(company=request.user).count()
         limit = request.user.plan.no_of_views
 
-        if count_views >= limit:
+        if count_views >= limit and not request.user.is_superuser:
             HrApplicantViewCount.objects.filter(company=request.user).delete()
             request.user.limit_exceeded = True
             request.user.save()
