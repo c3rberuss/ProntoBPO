@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RRHH/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RRHH/jwt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RRHH/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProntoBPO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RRHH/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,9 @@
       <workItem from="1583936920546" duration="290000" />
       <workItem from="1583937252804" duration="506000" />
       <workItem from="1583981063094" duration="8183000" />
-      <workItem from="1584023559018" duration="11374000" />
+      <workItem from="1584023559018" duration="11488000" />
+      <workItem from="1584068962119" duration="191000" />
+      <workItem from="1584069168728" duration="6330000" />
     </task>
     <servers />
   </component>
@@ -119,13 +120,17 @@
       <screen x="0" y="24" width="1360" height="744" />
     </state>
     <state x="417" y="200" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1360.744@0.24.1360.744" timestamp="1583425899443" />
+    <state x="363" y="124" width="632" height="545" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584069149457">
+      <screen x="0" y="24" width="1360" height="744" />
+    </state>
+    <state x="363" y="124" width="632" height="545" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.24.1360.744@0.24.1360.744" timestamp="1584069149457" />
     <state x="177" y="30" key="SettingsEditor" timestamp="1583723236417">
       <screen x="0" y="24" width="1360" height="744" />
     </state>
     <state x="177" y="30" key="SettingsEditor/0.24.1360.744@0.24.1360.744" timestamp="1583723236417" />
-    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583874998731">
+    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1584071082793">
       <screen x="0" y="24" width="1360" height="744" />
     </state>
-    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.24.1360.744@0.24.1360.744" timestamp="1583874998731" />
+    <state x="406" y="309" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.24.1360.744@0.24.1360.744" timestamp="1584071082793" />
   </component>
 </project>

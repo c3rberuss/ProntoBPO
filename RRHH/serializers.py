@@ -16,18 +16,18 @@ class CompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HrCompany
-        fields = ['id', 'name', 'email', 'plan', 'limit_exceeded']
+        fields = ['id', 'name', 'email', 'plan', 'limit_exceeded', 'no_views']
 
 
 class CompanyCreateSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True)
-    plan = serializers.IntegerField(required=True)
+    plan_id = serializers.IntegerField(required=True)
     password = serializers.CharField(required=True)
     name = serializers.CharField(required=True)
 
     class Meta:
         model = HrCompany
-        exclude = ['groups', 'user_permissions']
+        exclude = ['groups', 'user_permissions', 'plan']
 
 
 class ApplicantSerializer(serializers.ModelSerializer):

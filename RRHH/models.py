@@ -324,6 +324,10 @@ class HrCompany(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', ]
 
+    @property
+    def no_views(self):
+        return HrApplicantViewCount.objects.filter(company=self).count()
+
     def __str__(self):
         return self.name
 
@@ -331,3 +335,12 @@ class HrCompany(AbstractBaseUser, PermissionsMixin):
         verbose_name = "Company"
         verbose_name_plural = "Companies"
         db_table = 'hr_company'
+
+
+class HrApplicantViewCount(models.Model):
+    id = models.AutoField(primary_key=True)
+    company = models.ForeignKey(HrCompany, on_delete=models.CASCADE, null=False)
+    applicant = models.ForeignKey(HrApplicant, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = 'hr_applicant_view'

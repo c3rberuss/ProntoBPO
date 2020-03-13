@@ -141,6 +141,7 @@ REST_FRAMEWORK = {
 JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=3),
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'RRHH.jwt.jwt_response_payload_handler',
 }
 
 AUTH_USER_MODEL = 'RRHH.HrCompany'
