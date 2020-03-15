@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token
 from rest_framework import routers
 from RRHH.views import JobViewSet, CompanyViewSet, ApplicantViewSet
 from ProntoBPO.settings import DEBUG
@@ -30,6 +30,7 @@ router.register('applicants', ApplicantViewSet, basename='Applicants')
 urlpatterns = [
     path('api/auth/', obtain_jwt_token),
     path('api/', include(router.urls)),
+    path('api/verify/', verify_jwt_token)
 ]
 
 if DEBUG:

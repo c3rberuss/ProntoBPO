@@ -328,6 +328,10 @@ class HrCompany(AbstractBaseUser, PermissionsMixin):
     def no_views(self):
         return HrApplicantViewCount.objects.filter(company=self).count()
 
+    @property
+    def plan_views(self):
+        return HrPlan.objects.get(pk=self.plan.pk).no_of_views
+
     def __str__(self):
         return self.name
 

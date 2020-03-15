@@ -149,7 +149,7 @@ AUTH_USER_MODEL = 'RRHH.HrCompany'
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:8000',
+    'http://localhost:3000',
     'http://localhost',
     'http://192.168.1.18',
     'http://ues.local'

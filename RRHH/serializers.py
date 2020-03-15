@@ -1,6 +1,6 @@
 import django_filters
 from rest_framework import serializers
-from RRHH.models import HrJob, HrCompany, HrApplicant
+from RRHH.models import HrJob, HrCompany, HrApplicant, HrCompanyPlan
 
 
 class JobSerializer(serializers.HyperlinkedModelSerializer):
@@ -11,12 +11,18 @@ class JobSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'name', 'department', 'description', 'requirements', 'state', 'color_class']
 
 
+class PlanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HrCompanyPlan
+        fields = ['name', 'no_of_views']
+
+
 class CompanySerializer(serializers.ModelSerializer):
-    plan = serializers.StringRelatedField(many=False)
+    plan = PlanSerializer(many=False, read_only=True)
 
     class Meta:
         model = HrCompany
-        fields = ['id', 'name', 'email', 'plan', 'limit_exceeded', 'no_views']
+        fields = ['id', 'name', 'email', 'plan', 'limit_exceeded', 'no_views', 'plan_views']
 
 
 class CompanyCreateSerializer(serializers.ModelSerializer):

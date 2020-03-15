@@ -1,5 +1,6 @@
 from rest_framework.permissions import BasePermission
-from RRHH.models import HrApplicantViewCount
+from RRHH.models import HrApplicantViewCount, HrCompany
+from RRHH.serializers import CompanySerializer
 
 
 class IsNotLimitExceeded(BasePermission):
@@ -17,3 +18,16 @@ class IsNotLimitExceeded(BasePermission):
             request.user.save()
 
         return bool(not request.user.limit_exceeded)
+
+
+class IsYourSelfOrAdmin(BasePermission):
+
+    def has_permission(self, request, view):
+        user = request.user
+
+        try:
+            company = HrCompany.objects.get(pk=view.kwargs['pk'])
+        except:
+            return bool(False or user.is_superuser)
+
+        return bool(user.is_superuser or company.id == user.id)

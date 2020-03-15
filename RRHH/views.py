@@ -9,7 +9,7 @@ from rest_framework import viewsets, generics, permissions, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from RRHH.models import HrJob, HrCompany, HrApplicant, HrApplicantViewCount
-from RRHH.permissions import IsNotLimitExceeded
+from RRHH.permissions import IsNotLimitExceeded, IsYourSelfOrAdmin
 from RRHH.serializers import JobSerializer, CompanySerializer, PasswordSerializer, CompanyCreateSerializer, \
     ApplicantSerializer, ApplicantProfileSerializer
 from RRHH.signals import count_view
@@ -21,11 +21,16 @@ class JobViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generics.List
     filterset_class = JobFilter
 
 
-class CompanyViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generics.ListCreateAPIView):
-    queryset = HrCompany.objects.filter(is_active=True, is_superuser=False, is_staff=False)
-    permission_classes = [permissions.IsAdminUser]
+class CompanyViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generics.ListCreateAPIView,
+                     mixins.UpdateModelMixin):
+    queryset = HrCompany.objects.filter(is_active=True)
+    permission_classes = [IsYourSelfOrAdmin]
     filterset_class = CompanyFilter
     serializer_class = CompanySerializer
+
+    def update(self, request, *args, **kwargs):
+        self.serializer_class = CompanySerializer
+        return super(CompanyViewSet, self).update(request, *args, **kwargs)
 
     def create(self, request, *args, **kwargs):
         self.serializer_class = CompanyCreateSerializer
