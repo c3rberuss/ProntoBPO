@@ -10,14 +10,18 @@ class IsNotLimitExceeded(BasePermission):
             return True
 
         count_views = HrApplicantViewCount.objects.filter(company=request.user).count()
-        limit = request.user.plan.no_of_views
+
+        if request.user.plan is not None:
+            limit = request.user.plan.no_of_views
+        else:
+            return bool(False or request.user.is_superuser)
 
         if count_views >= limit and not request.user.is_superuser:
             HrApplicantViewCount.objects.filter(company=request.user).delete()
             request.user.limit_exceeded = True
             request.user.save()
 
-        return bool(not request.user.limit_exceeded)
+        return bool(not request.user.limit_exceeded or request.user.is_superuser)
 
 
 class IsYourSelfOrAdmin(BasePermission):

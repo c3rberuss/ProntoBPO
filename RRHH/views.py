@@ -8,10 +8,10 @@ from RRHH.filters import JobFilter, ApplicantFilter, CompanyFilter
 from rest_framework import viewsets, generics, permissions, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from RRHH.models import HrJob, HrCompany, HrApplicant, HrApplicantViewCount
+from RRHH.models import HrJob, HrCompany, HrApplicant, HrApplicantViewCount, HrCompanyPlan, HrDepartment, HrRecruitmentDegree
 from RRHH.permissions import IsNotLimitExceeded, IsYourSelfOrAdmin
 from RRHH.serializers import JobSerializer, CompanySerializer, PasswordSerializer, CompanyCreateSerializer, \
-    ApplicantSerializer, ApplicantProfileSerializer
+    ApplicantSerializer, ApplicantProfileSerializer, PlanSerializer, DepartmentSerializer, DegreeSerializer
 from RRHH.signals import count_view
 
 
@@ -71,6 +71,8 @@ class ApplicantViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generic
     serializer_class = ApplicantSerializer
     filterset_class = ApplicantFilter
     permission_classes = [IsNotLimitExceeded]
+    ordering_fields = ['priority']
+    ordering = ['-priority']
 
     def list(self, request, *args, **kwargs):
         self.serializer_class = ApplicantSerializer
@@ -80,6 +82,21 @@ class ApplicantViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generic
         self.serializer_class = ApplicantProfileSerializer
         count_view.send(sender=request.user, applicant=self.get_object())
         return super(ApplicantViewSet, self).retrieve(self, request, *args, **kwargs)
+
+
+class CompanyPlanViewSet(viewsets.ViewSetMixin, generics.ListAPIView):
+    queryset = HrCompanyPlan.objects.all()
+    serializer_class = PlanSerializer
+
+
+class DepartmentViewSet(viewsets.ViewSetMixin, generics.ListAPIView):
+    queryset = HrDepartment.objects.filter(active=True)
+    serializer_class = DepartmentSerializer
+
+
+class DegreeViewSet(viewsets.ViewSetMixin, generics.ListAPIView):
+    queryset = HrRecruitmentDegree.objects.all()
+    serializer_class = DegreeSerializer
 
 
 # Receiver

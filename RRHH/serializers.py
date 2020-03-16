@@ -1,6 +1,6 @@
 import django_filters
 from rest_framework import serializers
-from RRHH.models import HrJob, HrCompany, HrApplicant, HrCompanyPlan
+from RRHH.models import HrJob, HrCompany, HrApplicant, HrCompanyPlan, HrDepartment, HrRecruitmentDegree
 
 
 class JobSerializer(serializers.HyperlinkedModelSerializer):
@@ -62,3 +62,15 @@ class PasswordSerializer(serializers.ModelSerializer):
     class Meta:
         model = HrCompany
         fields = ['password']
+
+
+class DepartmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HrDepartment
+        fields = ['id', 'name', 'complete_name']
+
+
+class DegreeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HrRecruitmentDegree
+        fields = ['id', 'name']
