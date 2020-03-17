@@ -14,7 +14,7 @@ class JobSerializer(serializers.HyperlinkedModelSerializer):
 class PlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = HrCompanyPlan
-        fields = ['name', 'no_of_views']
+        fields = ['id', 'name', 'no_of_views']
 
 
 class CompanySerializer(serializers.ModelSerializer):
@@ -22,7 +22,7 @@ class CompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HrCompany
-        fields = ['id', 'name', 'email', 'plan', 'limit_exceeded', 'no_views', 'plan_views']
+        fields = ['id', 'name', 'email', 'plan', 'limit_exceeded', 'is_superuser', 'no_views', 'plan_views']
 
 
 class CompanyCreateSerializer(serializers.ModelSerializer):

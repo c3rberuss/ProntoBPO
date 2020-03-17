@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2a3fa8ee-6f6f-43db-a107-85b586e618c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProntoBPO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProntoBPO/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProntoBPO/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RRHH/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RRHH/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RRHH/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RRHH/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +99,10 @@
       <workItem from="1584023559018" duration="11488000" />
       <workItem from="1584068962119" duration="191000" />
       <workItem from="1584069168728" duration="24101000" />
-      <workItem from="1584308574894" duration="1467000" />
+      <workItem from="1584308574894" duration="2045000" />
+      <workItem from="1584371464855" duration="1621000" />
+      <workItem from="1584383706197" duration="5292000" />
+      <workItem from="1584406024250" duration="240000" />
     </task>
     <servers />
   </component>
