@@ -1,6 +1,6 @@
 import django_filters
 from django.dispatch import receiver
-from django.shortcuts import render
+from rest_framework import status
 
 # Create your views here.
 
@@ -8,7 +8,8 @@ from RRHH.filters import JobFilter, ApplicantFilter, CompanyFilter
 from rest_framework import viewsets, generics, permissions, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from RRHH.models import HrJob, HrCompany, HrApplicant, HrApplicantViewCount, HrCompanyPlan, HrDepartment, HrRecruitmentDegree
+from RRHH.models import HrJob, HrCompany, HrApplicant, HrApplicantViewCount, HrCompanyPlan, HrDepartment, \
+    HrRecruitmentDegree
 from RRHH.permissions import IsNotLimitExceeded, IsYourSelfOrAdmin
 from RRHH.serializers import JobSerializer, CompanySerializer, PasswordSerializer, CompanyCreateSerializer, \
     ApplicantSerializer, ApplicantProfileSerializer, PlanSerializer, DepartmentSerializer, DegreeSerializer
@@ -33,8 +34,26 @@ class CompanyViewSet(viewsets.ViewSetMixin, mixins.RetrieveModelMixin, generics.
         return super(CompanyViewSet, self).update(request, *args, **kwargs)
 
     def create(self, request, *args, **kwargs):
-        self.serializer_class = CompanyCreateSerializer
-        return super(CompanyViewSet, self).create(request, *args, **kwargs)
+
+        company_tmp = CompanyCreateSerializer(data=request.data)
+
+        if company_tmp.is_valid():
+
+            if HrCompany.objects.filter(email__iexact=company_tmp.data['email']).count() == 0:
+                company = HrCompany()
+                company.name = company_tmp.data['name']
+                company.email = company_tmp.data['email']
+                company.plan_id = company_tmp.data['plan_id']
+
+                company.set_password(company_tmp.data['password'])
+
+                company.save()
+
+                return Response(CompanySerializer(company).data)
+
+            return Response({"message": "Company already exists"}, status=status.HTTP_409_CONFLICT)
+
+        return Response(company_tmp.errors)
 
     def list(self, request, *args, **kwargs):
         self.serializer_class = CompanySerializer
